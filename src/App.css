@@ -33,5 +33,7 @@
 }
 
 .silk-p {
-
+  font-size: 250%;
+  letter-spacing: 14px;
+  text-transform: uppercase;
 }
