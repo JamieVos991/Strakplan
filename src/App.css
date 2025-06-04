@@ -1,0 +1,37 @@
+.silk-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 50px;
+  height: 100vh;
+  z-index: -1;
+}
+
+.silk-title {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  color: white;
+  left: 0;
+  z-index: 99999;
+}
+
+.silk-h1 {
+  font-size: 800%;
+  display: flex;
+  text-transform: uppercase;
+  flex-direction: column;
+  line-height: .8;
+  text-align: center;
+  
+}
+
+.silk-p {
+
+}
