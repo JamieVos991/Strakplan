@@ -1,15 +1,29 @@
 import "./App.css";
-import Silk from "./components/silk";
+import Navigation from "./components/Navigation/Navigation";
+import Silk from "./components/Silk";
+import Upcoming from "./components/Upcoming/Upcoming";
+import TextPressure from "./components/Textpressure";
 
 function App() {
   return (
     <>
+      <Navigation />
       <div className="silk-title">
-        <h1 className="silk-h1">
-          <span className="silk-line">Strak</span>
-          <span className="silk-line">Plan</span>
-        </h1>
-        <p className="silk-p">Muziek</p>
+        <div style={{ position: "relative", height: "" }}>
+          <TextPressure
+            text="Strak plan muziek"
+            flex={true}
+            alpha={false}
+            stroke={false}
+            width={false}
+            weight={true}
+            italic={true}
+            textColor="black"
+            strokeColor="#ff0000"
+            minFontSize={200}
+          />
+        </div>
+        <p className="silk-p">Band van alle markten</p>
       </div>
       <div className="silk-background">
         <Silk
@@ -20,6 +34,7 @@ function App() {
           rotation={0}
         />
       </div>
+      <Upcoming />
     </>
   );
 }
