@@ -1,0 +1,26 @@
+.section-spacer {
+    height: 60vh;
+    width: 100vw;
+    padding: 2rem;
+    background-color: #FAF6E9;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.p-spacer {
+    font-weight: bolder;
+    font-family: "Backslash", sans-serif;
+    font-size: 1200%;
+    line-height: .60;
+}   
+
+.markten {
+    color: rgb(177, 155, 155) !important;
+}
+
+.band {
+    z-index: 1;
+    position: relative;
+}

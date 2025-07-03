@@ -2,8 +2,9 @@ nav {
     height: 80px;
     display: flex;
     align-items: center;
-    color: black;
+    color: white;
     justify-content: space-between;
+  padding: 0 50px;
 }
 
 ul {
@@ -16,4 +17,5 @@ li {
     text-transform: uppercase;
     font-size: 90%;
     letter-spacing: 1px;
+    cursor: pointer;
 }
