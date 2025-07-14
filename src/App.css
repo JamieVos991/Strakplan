@@ -1,37 +1,251 @@
-.silk-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  padding: 50px;
-  height: 100vh;
-  z-index: -1;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+.header-img {
+  width: 100%;
+  height: 950px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: right;
+  align-items: end;
+  padding: 2rem;
+  background-image: url(../public/bijlagen/IMG_7749.jpeg);
+}
+
+
+
+@media screen and (max-width: 1064px) {
+  .header-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .iframe-d {
+    display: none;
+  }
+}
+
+
+.iframe-d {
+  width: 40%;
 }
 
 .silk-title {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 0;
-  color: white;
-  left: 0;
-  z-index: 99999;
-}
-
-.silk-h1 {
-  font-size: 800%;
-  display: flex;
-  text-transform: uppercase;
-  flex-direction: column;
-  line-height: .8;
-  text-align: center;
-  
+  height: 100%;
+  gap: 0; 
 }
 
 .silk-p {
+  font-size: 1900%;
+  text-transform: uppercase;
+  margin: 0;         
+  font-weight: 900;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 2rem;
+  color:rgb(225, 220, 214);
+  line-height: .7;   
+}
 
+@font-face {
+  font-family: "Backslash";
+  src: url("./assets/Gazpacho-Font/Gazpacho-Italic-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.silk-p-more {
+  font-size: 1100%;
+  bottom: 100px;
+  margin: 0;         
+  letter-spacing: -12px;
+  font-weight: 900;
+  position: absolute;
+  font-family: "Backslash", sans-serif;
+  color: rgb(177, 155, 155) !important ;
+}
+
+@keyframes spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.silk-img {
+  width: 70%;
+  position: absolute;
+  right: -35%;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  animation: spin 10s linear infinite;
+  transform-origin: center;
+}
+
+.silk-background-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  padding: 3rem;
+}
+
+.silk-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.container-silktext {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.silk-p-extra {
+  color: white;
+  font-family: "Newsreader", serif;
+}
+
+.extra-container {
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .extra-container {
+    flex-direction: column;
+  }
+}
+
+.lorem-text {
+  max-width: 400px;
+  font-size: 120%;
+}
+
+.img-star {
+  width: 7%;
+}
+
+.cordinates {
+  font-size: 140%;
+}
+
+.button-strak {
+  padding: 10px 20px;
+  background: none;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 1200px) {
+  .silk-p {
+    font-size: 1200%;
+  }
+
+  .silk-p-more {
+    font-size: 700%;
+    letter-spacing: -6px;
+    bottom: 60px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .silk-background-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    height: 80vh;
+    text-align: center;
+  }
+
+  .container-silktext {
+    align-items: center;
+    gap: 70px;
+  }
+
+  .extra-container {
+    display: flex;
+  }
+
+  .silk-p {
+    font-size: 800%;
+  }
+
+  .silk-p-more {
+    position: static;
+    font-size: 500%;
+    margin-top: 2rem;
+  }
+
+
+  .silk-img {
+    position: absolute !important;
+    left: calc(50% - 302px);
+    bottom: -100% !important;
+    top: auto !important;
+    width: 600px;
+    animation: spin 10s linear infinite !important;
+    transform-origin: center !important;
+    z-index: 1;
+  }
+  .plan {
+    font-size: 1000%;
+  }
+
+  .silk-p-more {
+    position: absolute;
+    top: 28%;
+  }
+
+  .silk-p-extra {
+  }
+
+  .lorem-text {
+    padding: 0 2rem;
+  } 
+  .silk-p {
+    line-height: 0.55;
+  }
+
+  .cordinates {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+
+  .img-star {
+    width: 15%;
+  }
+
+  .lorem-text,
+  .cordinates {
+    font-size: 100%;
+    max-width: 100%;
+  }
 }
