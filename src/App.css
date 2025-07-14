@@ -6,7 +6,40 @@
   height: 950px;
   background-position: center;
   background-size: cover;
+  display: flex;
+  justify-content: right;
+  align-items: end;
+  padding: 2rem;
   background-image: url(../public/bijlagen/IMG_7749.jpeg);
+}
+
+
+
+@media screen and (max-width: 1064px) {
+  .header-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: auto; /* image won't be fixed-height anymore */
+    aspect-ratio: 16 / 9; /* keep image ratio responsive */
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .iframe-d {
+    display: none;
+  }
+}
+
+
+
+.iframe-d {
+  width: 40%;
 }
 
 .silk-title {
@@ -97,9 +130,15 @@
 }
 
 .extra-container {
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1.5rem;
   align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .extra-container {
+    flex-direction: column;
+  }
 }
 
 .lorem-text {
@@ -113,4 +152,101 @@
 
 .cordinates {
   font-size: 140%;
+}
+
+.button-strak {
+  padding: 10px 20px;
+  background: none;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 1200px) {
+  .silk-p {
+    font-size: 1200%;
+  }
+
+  .silk-p-more {
+    font-size: 700%;
+    letter-spacing: -6px;
+    bottom: 60px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .silk-background-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    height: 80vh;
+    text-align: center;
+  }
+
+  .container-silktext {
+    align-items: center;
+    gap: 70px;
+  }
+
+  .extra-container {
+    display: flex;
+  }
+
+  .silk-p {
+    font-size: 800%;
+  }
+
+  .silk-p-more {
+    position: static;
+    font-size: 500%;
+    margin-top: 2rem;
+  }
+
+
+  .silk-img {
+    position: absolute !important;
+    left: calc(50% - 302px);
+    bottom: -100% !important;
+    top: auto !important;
+    width: 600px;
+    animation: spin 10s linear infinite !important;
+    transform-origin: center !important;
+    z-index: 1;
+  }
+  .plan {
+    font-size: 1000%;
+  }
+
+  .silk-p-more {
+    position: absolute;
+    top: 28%;
+  }
+
+  .silk-p-extra {
+  }
+
+  .lorem-text {
+    padding: 0 2rem;
+  } 
+  .silk-p {
+    line-height: 0.55;
+  }
+
+  .cordinates {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+
+  .img-star {
+    width: 15%;
+  }
+
+  .lorem-text,
+  .cordinates {
+    font-size: 100%;
+    max-width: 100%;
+  }
 }

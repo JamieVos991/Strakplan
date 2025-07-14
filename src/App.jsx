@@ -1,12 +1,14 @@
 import "./App.css";
 import Navigation from "./components/Navigation/Navigation";
 import Silk from "./components/Silk";
-import Upcoming from "./components/Upcoming/Upcoming";
+import About from "./components/About/About";
 import TextPressure from "./components/Textpressure";
 import Shop from "./components/Shop/Shop";
-import New from "./components/New/New";
+import Upcoming from "./components/Upcoming/Upcoming";
 import Between from "./components/Spacer/Spacer";
 import Contact from "./components/Contact/Contact";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import AboutUpper from "./components/About/AboutUpper";
 
 function App() {
   return (
@@ -39,32 +41,50 @@ function App() {
             rotation={0}
           />
         </div>
+
         <div className="container-silktext">
           <div>
             <p className="silk-p">Strak</p>
-            <p className="silk-p">Plan</p>
+            <p className="silk-p plan">Plan</p>
           </div>
+
           <div className="extra-container">
             <p className="silk-p-extra lorem-text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
               earum cupiditate.
             </p>
-            <img className="img-star" src="../public/bijlagen/star.webp"></img>
+            <img className="img-star" src="/bijlagen/star.webp" alt="star" />
             <p className="silk-p-extra cordinates">
               5230.0102, N, 00544.8849, E
             </p>
           </div>
+
           <p className="silk-p-more">Muziek.</p>
         </div>
-        <img className="silk-img" src="../public/bijlagen/vinyl.png"></img>
+
+        <img className="silk-img" src="/bijlagen/vinyl.png" alt="vinyl" />
       </div>
+
       <div className="silk-backgroud">
-        <div className="header-img"></div>
+        <div className="header-img">
+          <iframe
+            className="iframe-d"
+            style={{ borderRadius: "12px" }}
+            src="https://open.spotify.com/embed/artist/75MsKtOdFkYbNe6hOeeitD?utm_source=generator"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
       <Between />
-      <New />
       <Upcoming />
-      <Shop />
+      <AboutUpper />
+      <About />
+      {/* <Shop /> */}
       <Contact />
     </>
   );
