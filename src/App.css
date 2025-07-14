@@ -20,8 +20,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    height: auto; /* image won't be fixed-height anymore */
-    aspect-ratio: 16 / 9; /* keep image ratio responsive */
+    height: auto;
+    aspect-ratio: 16 / 9;
     flex-direction: column;
     align-items: center;
     justify-content: end;
@@ -35,7 +35,6 @@
     display: none;
   }
 }
-
 
 
 .iframe-d {
