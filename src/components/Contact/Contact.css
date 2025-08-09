@@ -1,78 +1,53 @@
-.section-contact {
-    min-height: 90vh;
-    width: 100vw;
-    background-color: #FAF6E9;
+.contact-section {
+  width: 100vw;
+  background-color: #FAF6E9;
 }
 
-.h1-contact {
-    font-size: 850%;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
+.contact-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-section svg {
+  width: 100%;
+  max-height: 300px;
 }
 
 path {
-    fill: transparent;
-  }
-
-
-  .sectie-a {
-    width: 100%;
-    display: flex;
-    height: 50%;
-    align-items: center;
-  }
-
-  .left {
-    width: 50%;
-    background-image: url(../../../public/bijlagen/IMG_7745.jpeg);
-    background-position: center;
-    background-size:cover;
-    background-repeat: no-repeat;
-    
-  }
-
-  .right {
-    width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .emaill {
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 520%;
-    color: hsl(46, 63%, 86%);
-    text-transform: uppercase;
-    font-family: 'backslash', sans-serif;
-  }
-  
-  text {
-    fill: #000000;
-    font-size: 700%;
-    font-family: "Backslash", sans-serif;
-    text-transform: uppercase;
-  }
-
-  .section-contact svg {
-    width: 100%;
-    max-height: 300px;
-  }
-  
-.sectie-b {
-    width: 100%;
-    height: 100%;
-    background: #393E46;
-    display: flex;
+  fill: transparent;
 }
 
-.p-width {
-    width: 50%;
+text {
+  fill: #000000;
+  font-size: 700%;
+  font-family: "Backslash", sans-serif;
+  text-transform: uppercase;
 }
 
-.box {
+.contact-content {
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+  background: #393E46;
+}
+
+.contact-image {
+  width: 50%;
+  background-image: url(../../../public/bijlagen/IMG_7745.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact-info {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-box {
   width: 50%;
   height: 50%;
   padding: 25px;
@@ -82,49 +57,49 @@ path {
   gap: 15px;
 }
 
-
-.re {
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-}
-
-.er {
-  border-right: 1px solid white;
-  border-bottom: 1px solid white;
-}
-
-.box h2 {
+.contact-box h2 {
   font-weight: bold;
   font-size: 220%;
 }
 
-.box a {
+.contact-box a {
   color: white;
+  text-decoration: none;
+}
+
+.contact-box-border {
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.contact-box-border-alt {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 @media screen and (max-width: 1000px) {
-  .sectie-b {
-    display: flex;
+  .contact-content {
     flex-direction: column;
   }
 
-  .section-contact {
+  .contact-image {
+    width: 100%;
+    height: 300px;
   }
 
-  .left {
-    height: 300px !important;
+  .contact-info {
     width: 100%;
-    background-image: url(../../../public/bijlagen/IMG_7745.jpeg);
-  }
-
-  .right {
-    width: 100%;
-    display: flex;
     flex-direction: column;
   }
 
-  .box {
+  .contact-box {
+    width: 100%;
     border: none;
-    width: 100%;
   }
 }

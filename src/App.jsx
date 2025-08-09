@@ -1,38 +1,36 @@
 import "./App.css";
-import Navigation from "./components/Navigation/Navigation";
-import Silk from "./components/Silk";
+import Silk from "./components/Reactbits/Silk/silk";
 import About from "./components/About/About";
-import TextPressure from "./components/Textpressure";
-import Shop from "./components/Shop/Shop";
 import Upcoming from "./components/Upcoming/Upcoming";
 import Between from "./components/Spacer/Spacer";
 import Contact from "./components/Contact/Contact";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import AboutUpper from "./components/About/AboutUpper";
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import { useAuth0 } from "@auth0/auth0-react";
 
-function App() {
+function ProtectedRoute({ children }) {
+  const { isAuthenticated, loginWithRedirect, isLoading } = useAuth0();
+
+  if (isLoading) return <p>Loading...</p>;
+  if (!isAuthenticated) {
+    loginWithRedirect();
+    return null;
+  }
+
+  return children;
+}
+
+function MainPage() {
+  const [vinylLoaded, setVinylLoaded] = useState(false);
+
   return (
     <>
-      {/* <Navigation /> */}
-      {/* <div className="silk-title">
-        <div style={{ position: "relative", padding: "0 40px", height: "" }}>
-          <TextPressure
-            text="Strak plan muziek"
-            flex={true}
-            alpha={false}
-            stroke={false}
-            width={false}
-            weight={true}
-            italic={true}
-            textColor="white"
-            strokeColor="#ff0000"
-            minFontSize={200}
-          />
-        </div>
-        <p className="silk-p">Band van alle markten</p>
-      </div> */}
-      <div className="silk-background-wrapper">
-        <div className="silk-background">
+      {/* Everything you had before stays here */}
+      <div className="hero-wrapper">
+        <div className="hero-background">
           <Silk
             speed={5}
             scale={1}
@@ -42,51 +40,68 @@ function App() {
           />
         </div>
 
-        <div className="container-silktext">
+        <div className="hero-text-container">
           <div>
-            <p className="silk-p">Strak</p>
-            <p className="silk-p plan">Plan</p>
+            <p className="title-main">Strak</p>
+            <p className="title-main plan">Plan</p>
+            <p className="title-sub">Muziek.</p>
           </div>
 
-          <div className="extra-container">
-            <p className="silk-p-extra lorem-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-              earum cupiditate.
+          <div className="info-block">
+            <p className="subtitle lorem">
+              wij maken muziek die blijft hangen. Met pakkende teksten, dansbare
+              ritmes en een vette knipoog naar de jaren ’80 Nederpop, zet deze
+              vierkoppige band elke zaal op z’n kop.
             </p>
             <img className="img-star" src="/bijlagen/star.webp" alt="star" />
-            <p className="silk-p-extra cordinates">
-              5230.0102, N, 00544.8849, E
-            </p>
+            <div className="img-vinyl-wrapper">
+              <img
+                loading="eager"
+                className={`img-vinyl ${vinylLoaded ? "loaded" : ""}`}
+                src="bijlagen/vinyl-2.webp"
+                alt="vinyl"
+                onLoad={() => setVinylLoaded(true)}
+              />
+            </div>
+            <p className="subtitle coordinates">5230.0102, N, 00544.8849, E</p>
           </div>
-
-          <p className="silk-p-more">Muziek.</p>
-        </div>
-
-        <img className="silk-img" src="/bijlagen/vinyl.png" alt="vinyl" />
-      </div>
-
-      <div className="silk-backgroud">
-        <div className="header-img">
-          <iframe
-            className="iframe-d"
-            style={{ borderRadius: "12px" }}
-            src="https://open.spotify.com/embed/artist/75MsKtOdFkYbNe6hOeeitD?utm_source=generator"
-            width="100%"
-            height="152"
-            frameBorder="0"
-            allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
         </div>
       </div>
+
+      <div className="spotify-section">
+        <iframe
+          className="spotify-embed"
+          src="https://open.spotify.com/embed/artist/75MsKtOdFkYbNe6hOeeitD"
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
+      </div>
+
       <Between />
       <Upcoming />
       <AboutUpper />
       <About />
-      {/* <Shop /> */}
       <Contact />
     </>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
   );
 }
 

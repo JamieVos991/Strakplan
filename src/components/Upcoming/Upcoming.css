@@ -119,17 +119,16 @@ h1 {
 @media screen and (max-width: 1200px) {
   .show-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .show-item {
     border-left: none !important; 
   }
 
-  .show-item:last-child {
-    border-bottom: 1px solid #666; /* Add border to the last item */
-  }
-
+.show-list {
+  border-bottom: 1px solid white;
+}
   .show-item {
     max-width: 100%;
   }

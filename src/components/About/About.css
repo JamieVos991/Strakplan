@@ -1,20 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.section-upcoming {
-    min-height: 70vh;
-    color: rgb(250, 246, 233); 
-    display: flex;
-}
-
-
-
-.text-upcoming {
+.about-section {
+  background-color: rgb(250, 246, 233);
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
   display: flex;
-      flex-direction: column;
-      gap: 15px;
+  align-items: center;
 }
 
-.button-strak {
+.about-text-wrapper {
+  width: 60%;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.about-heading {
+  font-size: 8rem;
+  line-height: 1;
+  width: 100%;
+  word-break: break-word;
+}
+
+.upcoming-section {
+  min-height: 70vh;
+  color: rgb(250, 246, 233);
+  display: flex;
+}
+
+.upcoming-inner {
+  width: 100%;
+  padding: 20px 130px;
+  display: flex;
+  align-items: center;
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+}
+
+.upcoming-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.upcoming-description {
+  font-size: 250%;
+  text-transform: uppercase;
+}
+
+.btn-book {
   padding: 10px 50px;
   background: none;
   border: 1px solid white;
@@ -25,161 +61,24 @@
   letter-spacing: 1px;
 }
 
-.asdd {
-  font-family: -webkit-body !important; 
+.extra-text {
+  font-family: Backslash;
 }
 
-.p-upcoming-1 {
-   
+@media screen and (max-width: 1127px) {
+  .about-text-wrapper {
+    width: 100% !important;
+  }
+
+  .upcoming-description {
+    font-size: clamp(1.5rem, 5vw, 3.5rem);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .upcoming-inner {
+    min-height: 600px !important;
+    text-align: center;
+    padding: 0 20px;
+  }
 }
-
-.p-upcoming-2 {
-  font-size: 250%;
-  font-weight: bold;
-  text-transform:uppercase;
-}
-
-.section-upcoming-a {
-    width: 100%;
-    padding: 20px 130px;
-    display: flex;
-    align-items: center;
-    min-height: 600px;
-    overflow: hidden;
-    position: relative;
-    justify-content:  center;
-}
-
-.fa-brands {
-  color: white;
-  font-size: 150%;
-}
-
-.asd {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.socials {
-  height: 70px;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid white;
-}
-
-/* .section-upcoming-b {
-    width: 50%;
-    background-image: url(../../../public/bijlagen/IMG_7745.jpeg);
-    background-position: center;
-    background-size: cover;
-} */
-
-.section-aboutupper {
-    background-color: rgb(250, 246, 233);
-    position: relative;
-    overflow: hidden;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-  }
-
-  .section-aboutupper section {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .text-container {
-    display: flex;
-    font-size: 600%;
-    font-weight: bold;
-    white-space: nowrap;
-    width: max-content;
-    margin-bottom: 2rem;
-  }
-  
-  .custom-scroll-text {
-    color: black;
-  }
-
-  .text-about {
-    margin-right: 2rem;
-  }
-  
-  /* Apply horizontal offset to each row */
-  .row-1 {
-    transform: translateX(0rem);
-  }
-  
-  .row-2 {
-    transform: translateX(5rem);
-  }
-  
-  .row-3 {
-    transform: translateX(10rem);
-  }
-
-  .waardes {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-  }
-  
-  .waarde {
-    font-style: italic;
-    font-weight: bold;
-  }
-
-  .section-aboud {
-    line-height: .8;
-    text-transform: uppercase;
-  }
-
-  .about-t {
-    font-size: 15vw; /* Text scales with viewport width */
-    line-height: 1;
-    width: 100%;
-    word-break: break-word;
-  }
-  
-  .section-aboud {
-    width: 60%;
-  }
-
-  .section-aboudd {
-    width: 40%;
-    background-image: url(../../../public/bijlagen/IMG_7745.jpeg);  
-  }
-
-  .count-up-text {
-    font-size: 500%;
-  }
-
-  .about-t {
-    font-size: 8rem;
-
-  }
-
-  @media screen and (max-width: 1127px) {
-      .section-aboud {
-        width: 100% !important;
-      }
-
-      .p-upcoming-2 {
-        font-size: clamp(1.5rem, 5vw, 3.5rem);
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: center; /* Optional: center the text */
-        line-height: 1.2;
-      }
-
-      .section-upcoming-a {
-        min-height: 600px !important;
-        text-align: center;
-        padding: 0 20px;
-      }
-  }
-  

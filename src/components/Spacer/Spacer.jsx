@@ -10,28 +10,27 @@ function Spacer() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Remove this line if you want it to repeat
+          observer.disconnect();
         }
       },
       { threshold: 0.1 }
     );
 
-    if (textRef.current) {
-      observer.observe(textRef.current);
-    }
+    if (textRef.current) observer.observe(textRef.current);
 
     return () => {
-      if (textRef.current) {
-        observer.unobserve(textRef.current);
-      }
+      if (textRef.current) observer.unobserve(textRef.current);
     };
   }, []);
 
   return (
-    <section className="section-spacer">
-      <p ref={textRef} className={`p-spacer ${isVisible ? "fade-in" : ""}`}>
-        <span className="band"> Band van alle</span>{" "}
-        <span className="markten">markten</span>
+    <section className="spacer">
+      <p
+        ref={textRef}
+        className={`spacer__text ${isVisible ? "spacer__text--visible" : ""}`}
+      >
+        <span className="spacer__text--band">Band van alle</span>{" "}
+        <span className="spacer__text--markten">markten</span>
       </p>
     </section>
   );
