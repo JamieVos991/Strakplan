@@ -3,10 +3,22 @@
   background-color: #FAF6E9;
 }
 
+@font-face {
+  font-family: 'Kantora Medium';
+  src: url('../../assets/kontora-medium-1754815725-0/Kontora-Medium.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+svg path {
+  fill:white;
+}
+
+
 .contact-header {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
@@ -31,14 +43,6 @@ text {
   width: 100%;
   min-height: 60vh;
   background: #393E46;
-}
-
-.contact-image {
-  width: 50%;
-  background-image: url(../../../public/bijlagen/IMG_7745.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .contact-info {
@@ -67,21 +71,123 @@ text {
   text-decoration: none;
 }
 
-.contact-box-border {
-  border-right: 1px solid white;
-  border-bottom: 1px solid white;
-}
-
-.contact-box-border-alt {
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-}
-
 .contact-links {
   display: flex;
-  flex-direction: column;
   gap: 5px;
 }
+
+.parent {
+  display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 10px;
+grid-row-gap: 10px;
+height: 100%;
+}
+
+.a { 
+  grid-area: 1 / 1 / 6 / 3; 
+  background: #222831;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: .6;
+}
+
+.links a {
+  color: whitesmoke;
+  font-size: 350%;
+  text-decoration: none;
+}
+
+.b { 
+  grid-area: 1 / 3 / 6 / 5; 
+  background: #393E46;
+  border-radius: 10px;
+  padding: 2rem;
+}
+.c { 
+  grid-area: 1 / 5 / 3 / 6; 
+  background: #948979;
+  border-radius: 10px;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+}
+
+.fa-spotify, .fa-instagram {
+  font-size: 2rem;
+}
+
+.fa-phone-volume {
+  font-size: 1.5rem;
+}
+
+.d { 
+  grid-area: 3 / 5 / 6 / 6; 
+  background: #DFD0B8;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  gap: 10px;
+}
+
+@media (max-width: 1000px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    height: auto; /* let height grow with content */
+  }
+
+  .a {
+    grid-area: auto; /* reset grid-area so it flows naturally */
+  }
+  .b {
+    grid-area: auto;
+  }
+  .c {
+    grid-area: auto;
+  
+  }
+  .d {
+    grid-area: auto;
+  }
+
+  /* Make each box full width in 2-column layout */
+  .a, .b, .c, .d {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  /* Stack all grid items vertically */
+  .a, .b, .c, .d {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
 
 @media screen and (max-width: 1000px) {
   .contact-content {
@@ -102,4 +208,78 @@ text {
     width: 100%;
     border: none;
   }
+}
+
+.footer {
+  color: white;
+  padding: 2rem;
+  font-family: sans-serif;
+  width: 100%;
+  display: flex;
+  min-height: 80vh;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-link a {
+  color: white;
+  text-decoration: none;
+}
+
+.band {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 50%;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+  border-bottom: 1px solid white;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.mail {
+  color: white;
+  text-decoration: none;
+  font-size: 300%;
+  font-family: 'Kantora Medium', sans-serif;
+}
+
+.footer-links a {
+  color:hsl(217, 10%, 1%);
+  transition: .3s;
+  text-decoration: none;
+  font-size: 120%;
+}
+
+.footer-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.3rem;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  height: 25%;
+  font-size: 0.85rem;
+  color: #777;
 }

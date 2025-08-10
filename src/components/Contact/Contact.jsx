@@ -1,5 +1,7 @@
+import LightRays from "../Reactbits/LightRays/LightRays";
 import "./Contact.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Contact() {
   return (
@@ -16,57 +18,99 @@ function Contact() {
           </text>
         </svg>
       </div>
-      <div className="contact-content">
-        <div className="contact-image"></div>
-        <div className="contact-info">
-          <div className="contact-box contact-box-border">
-            <h2>Contact</h2>
+
+      <div className="contact-content" style={{ position: "relative" }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 0,
+            overflow: "hidden",
+          }}
+        >
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#fff"
+            raysSpeed={1.5}
+            lightSpread={0.8}
+            rayLength={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
+            className="custom-rays"
+          />
+        </div>
+
+        <footer className="footer" style={{ position: "relative", zIndex: 1 }}>
+          <div className="footer-top">
+            <div className="footer-links">
+              <Link to="/">Home</Link>
+              <Link to="/shows">Shows</Link>
+              <Link to="/about">About</Link>
+              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/">Shop</Link>
+            </div>
             <p>
-              <a href="mailto:info@strakplanmuziek.nl">
+              <a className="mail" href="mailto:info@strakplanmuziek.nl">
                 info@strakplanmuziek.nl
               </a>
             </p>
           </div>
-          <div className="contact-box">
-            <h2>Band</h2>
-            <div className="contact-links">
-              <a href="https://www.instagram.com/oliver_wester">
-                Oliver Wester
-              </a>
-              <a href="https://www.instagram.com/perbeld_">Per Beld</a>
-              <a href="https://www.instagram.com/barthoogendijk_">
-                Bart Hoogendijk
-              </a>
-              <p>Cas van der Linden</p>
+          <div class="parent">
+            <div class="a">
+              <div className="links">
+                <a
+                  href="https://www.instagram.com/oliver_wester"
+                  target="_blank"
+                >
+                  Oliver Wester
+                </a>
+                <a href="https://www.instagram.com/perbeld_" target="_blank">
+                  Per Beld
+                </a>
+                <a
+                  href="https://www.instagram.com/barthoogendijk_"
+                  target="_blank"
+                >
+                  Bart Hoogendijk
+                </a>
+                <a href="https://www.instagram.com/vdlcas" target="_blank">
+                  Cas van der Linden
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="contact-box">
-            <h2>Stalk ons</h2>
-            <div className="contact-links">
-              <a
-                href="https://www.instagram.com/strakplanmuziek/"
-                target="_blank"
-              >
-                Instagram
-              </a>
+            <div class="b"></div>
+            <div class="c">
               <a
                 href="https://open.spotify.com/artist/75MsKtOdFkYbNe6hOeeitD"
                 target="_blank"
               >
-                Spotify
+                <FontAwesomeIcon icon={["fab", "spotify"]} />
+              </a>
+              <a href="tel:+31612345678">
+                <FontAwesomeIcon icon={["fas", "phone-volume"]} />
+              </a>
+              <a
+                href="https://www.instagram.com/strakplanmuziek/"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={["fab", "instagram"]} />
               </a>
             </div>
-          </div>
-          <div className="contact-box contact-box-border-alt">
-            <h2>Website</h2>
-            <div className="contact-links">
-              <p>Start</p>
-              <p>Shows</p>
-              <p>About</p>
-              <Link to="/dashboard">Dashboard</Link>
+            <div class="d">
+              <p>Privacy Verklaring</p>
+              <p>
+                {" "}
+                © {new Date().getFullYear()} Strakplan Muziek. Alle rechten
+                voorbehouden.
+              </p>
             </div>
           </div>
-        </div>
+        </footer>
       </div>
     </section>
   );

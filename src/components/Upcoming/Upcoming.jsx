@@ -14,8 +14,35 @@ function New() {
         id: doc.id,
         ...doc.data(),
       }));
-      setShows(showsArray.sort((a, b) => b.date_day - a.date_day));
+
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      // Helper: convert day_month (string) + date_day (number) to a Date object in the current year
+      function getShowDate(show) {
+        // Parse month from day_month, e.g. "August"
+        const month = new Date(
+          `${show.day_month} 1, ${today.getFullYear()}`
+        ).getMonth();
+        return new Date(today.getFullYear(), month, show.date_day);
+      }
+
+      const futureShows = showsArray.filter((show) => {
+        const showDate = getShowDate(show);
+        return showDate >= today;
+      });
+
+      const sortedShows = futureShows
+        .sort((a, b) => {
+          const dateA = getShowDate(a);
+          const dateB = getShowDate(b);
+          return dateA - dateB;
+        })
+        .slice(0, 5); // limit to 5 upcoming shows
+
+      setShows(sortedShows);
     }
+
     fetchShows();
   }, []);
 
